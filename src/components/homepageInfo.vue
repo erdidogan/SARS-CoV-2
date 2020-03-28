@@ -5,16 +5,17 @@
                 <p class="title">Global</p>
                 <p>Total Case: <b>{{globalData.cases}}</b></p>
                 <p>Death: {{globalData.deaths}}</p>
-                <p>Revocered: {{globalData.recovered}}</p>
+                <p>Recovered: {{globalData.recovered}}</p>
+                <p>Last Update: {{new Date(globalData.updated).toLocaleDateString("tr-TR")}}</p>
             </div>
             <div class="tile is-child box" v-for="(data,index) in localData" v-bind:key="index"
                  v-show="data.country === country">
                 <b-tooltip label="Current Location" type="is-dark" position="is-right" always>
-                    <p class="title">{{country}}</p>
+                    <p class="title">{{data.country}}</p>
                 </b-tooltip>
-                <p>Total Case: <b>{{data.cases}}</b></p>
+                <p style="margin-top:24px;">Total Case: <b>{{data.cases}}</b></p>
                 <p>Death: {{data.deaths}}</p>
-                <p>Revocered: {{data.recovered}}</p>
+                <p>Recovered: {{data.recovered}}</p>
             </div>
         </div>
     </section>

@@ -56,7 +56,7 @@ npm run serve
 
 ## Authors
 
- *[Erdi Doğan](https://www.linkedin.com/in/doganerdi) 
+ [Erdi Doğan](https://www.linkedin.com/in/doganerdi) 
 
 
 ## License

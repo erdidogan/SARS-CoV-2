@@ -19,7 +19,8 @@
           <p>
             <strong>SARS-COV-2</strong> by <a href="https://www.linkedin.com/in/doganerdi">Erdi Doğan</a>. The source code is licensed
             <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
-            The data is updated three times a day by using open-source public APIs.
+            The data is updated three times a day by using open-source public APIs. You can find project source code on
+            <a href="https://github.com/erdidogan/SARS-CoV-2"> Github</a>.
           </p>
         </div>
       </footer>
