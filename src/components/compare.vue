@@ -18,15 +18,14 @@
 
                 </b-field>
                 <section>
-                    <div class="tile is-horizontal is-parent is-10">
+                    <div class="tile is-horizontal is-parent ">
                         <section v-for="(tag,index) in tags" v-bind:key="index">
                             <div class="tile is-parent">
                                 <article class="tile is-child notification is-light" >
                                     <div class="content">
                                         <p><b>{{tag.country}}</b></p>
-                                        <p class="subtitle">Cases</p>
                                         <div class="content" v-for="(cases,index) in tag.info" v-bind:key="index" >
-                                            <p v-if="cases.confirmed !== 0"> <b>{{getFormattedData(cases.date)}}</b>:{{cases.confirmed}} </p>
+                                            <p v-if="cases.confirmed !== 0"> {{getFormattedData(cases.date)}}| <b>Confirmed</b>: {{cases.confirmed}} | <b>Death</b>:{{cases.deaths}} | <b>Recovered</b>:{{cases.recovered}} </p>
                                         </div>
 
                                     </div>
