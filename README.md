@@ -44,6 +44,7 @@ npm run serve
 * [Vue 3](https://vuejs.org/) - The progressive javascript framework
 * [Buefy](https://buefy.org/) - Lightweight UI Components
 * [Axios](https://github.com/axios/axios) - Promise Based HTTP Client
+* [vue-chartkick](https://chartkick.com/vue) - JS Charts
 
 ## Open Source Public APIs
 

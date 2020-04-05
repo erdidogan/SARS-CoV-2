@@ -88,7 +88,12 @@
                 let confirmedCases = [];
                 for(let index in input){
                     for(let index2 in input[index]){
-                        let date = input[index][index2].date;
+                        let date = input[index][index2].date.toString().split("-")
+                        if(date[1]<10)
+                            date[1] = "0"+date[1]
+                        if(date[2]<10)
+                            date[2] = "0"+date[2]
+                        date = date.join("-")
                         let info = input[index][index2].deaths;
                         let cases = input[index][index2].confirmed;
                         death.push([date,info])
