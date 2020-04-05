@@ -6,14 +6,14 @@
           SARS-CoV-2
         </h1>
         <h2 class="subtitle">
-          Information Dashboard
+          Analytics
+          <latest-global-data/>
         </h2>
       </div>
     </section>
-
-    <GeneralInfo/>
-    <CompareData/>
-
+    <local-analytics/>
+    <compare/>
+    <section>
       <footer class="footer ">
         <div class="content has-text-centered">
           <p>
@@ -24,19 +24,22 @@
           </p>
         </div>
       </footer>
-
+    </section>
   </section>
 </template>
 
 <script>
-  import GeneralInfo from './components/homepageInfo.vue'
-  import CompareData from './components/compare.vue'
+
+  import LatestGlobalData from "./components/latestGlobalData";
+  import LocalAnalytics from "./components/localAnalytics";
+  import Compare from "./components/compare";
 
   export default {
     name: 'App',
     components: {
-      GeneralInfo,
-      CompareData
+      Compare,
+      LocalAnalytics,
+      LatestGlobalData,
     }
   }
 

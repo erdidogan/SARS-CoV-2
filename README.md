@@ -1,6 +1,7 @@
 # SARS-CoV-2 UI 
 
 ![Image](./src/assets/1.png "Information Dashborad")
+![Image](./src/assets/2.png "Information Dashborad")
 
 An open-source covid19 data tracker project. 
 
@@ -9,11 +10,7 @@ An open-source covid19 data tracker project.
 * Elegant, Simple UI
 * Instant case search
 * Instant Local Case Data View
-![Image](./src/assets/2.png "Local")
 * Compare the number of cases in countries
-![Image](./src/assets/3.png "Compare")
-
-
 
 
 ### Prerequisites
