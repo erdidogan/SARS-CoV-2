@@ -16,13 +16,14 @@
                                 autocomplete
                                 :allow-new="allowNew"
                                 :open-on-focus="openOnFocus"
-                                :maxtags="10"
+                                :maxtags="5"
                                 field="name"
                                 placeholder="Type a country name"
                                 @typing="getFilteredTags4Confirmed">
                         </b-taginput>
                     </b-field>
-                    <line-chart  xtitle="Days" ytitle="Confirmed Cases" :messages="{empty: 'No data'}" :data="this.tagsConfirmed"></line-chart>
+                    <line-chart xtitle="Days" ytitle="Confirmed Cases" :messages="{empty: 'No data'}"
+                                :data="this.tagsConfirmed"></line-chart>
                 </div>
             </div>
 
@@ -44,13 +45,14 @@
                                 autocomplete
                                 :allow-new="allowNew"
                                 :open-on-focus="openOnFocus"
-                                :maxtags="10"
+                                :maxtags="5"
                                 field="name"
                                 placeholder="Type a country name"
                                 @typing="getFilteredTags">
                         </b-taginput>
                     </b-field>
-                    <line-chart label="Death Graph" xtitle="Days" ytitle="Deaths"  :messages="{empty: 'No data'}" :data="this.tags"></line-chart>
+                    <line-chart label="Death Graph" xtitle="Days"  ytitle="Deaths"
+                                :messages="{empty: 'No data'}" :data="this.tags"></line-chart>
                 </div>
             </div>
 
@@ -72,8 +74,8 @@
         },
         data() {
             return {
-                deathGraph:[],
-                confirmedGraph:[],
+                deathGraph: [],
+                confirmedGraph: [],
 
                 filteredTags: this.deathGraph,
                 tags: [],
@@ -94,45 +96,34 @@
                 }
             },
 
-            drawGraph(input){
+            drawGraph(input) {
                 let death = [];
                 let confirmedCases = [];
-                let count = 1;
-                let dayCount = this.getDays();
-                for(let index in input){
-                    for(let index2 in input[index]){
-                            let date = input[index][index2].date.toString().split("-")
-                            if(date[1]<10)
-                                date[1] = "0"+date[1]
-                            if(date[2]<10)
-                                date[2] = "0"+date[2]
-                            date = date.join("-")
-                            let info = input[index][index2].deaths;
-                            let cases = input[index][index2].confirmed;
-
-                            if(count !== 1 && count !== dayCount){
-                                if(count % 10 === 0){
-                                        death.push([date,info])
-                                        confirmedCases.push([date,cases])
-                                }
-                            }else{
-                                    death.push([date,info])
-                                    confirmedCases.push([date,cases])
-                            }
-                            count ++;
-
+                for (let index in input) {
+                    for (let index2 in input[index]) {
+                        let date = input[index][index2].date.toString().split("-");
+                        if (date[1] < 10)
+                            date[1] = "0" + date[1];
+                        if (date[2] < 10)
+                            date[2] = "0" + date[2];
+                        date = date.join("-")
+                        let deaths = input[index][index2].deaths;
+                        let cases = input[index][index2].confirmed;
+                        if (deaths !== 0)
+                            death.push([date, deaths]);
+                        if (cases !== 0)
+                            confirmedCases.push([date, cases]);
                     }
-                    count = 1;
-                    if(index === "US")
+                    if (index === "US")
                         index = "United States";
-                    this.deathGraph.push({"name":index, "data":death});
-                    this.confirmedGraph.push({"name":index, "data":confirmedCases});
-                    if(  index === localStorage.getItem("country") || index === "China"){
-                       this.tagsConfirmed.push({"name":index, "data":confirmedCases});
-                       this.tags.push({"name":index, "data":death});
+                    this.deathGraph.push({"name": index, "data": death});
+                    this.confirmedGraph.push({"name": index, "data": confirmedCases});
+                    if (index === localStorage.getItem("country") || index === "Italy" || index === "France" || index === "United States") {
+                        this.tagsConfirmed.push({"name": index, "data": confirmedCases});
+                        this.tags.push({"name": index, "data": death});
                     }
                     death = [];
-                    confirmedCases= [];
+                    confirmedCases = [];
 
                 }
             },
@@ -152,18 +143,6 @@
                         .indexOf(text.toLowerCase()) >= 0
                 })
             },
-            getDays(){
-                return Math.round((this.parseDate(new Date().toLocaleDateString("en-EN"))-this.parseDate("1/22/2020"))/(1000*60*60*24));
-            },
-            parseDate(str) {
-                let mdy = str.split('/');
-                return new Date(mdy[2], mdy[0]-1, mdy[1]);
-            }
-
-
-
-
-
         },
     }
 </script>
