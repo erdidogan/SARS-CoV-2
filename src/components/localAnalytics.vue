@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div class="content">
-                    <nav class="level is-mobile">
+                    <nav class="level">
                         <div class="level-item has-text-centered">
                             <div>
                                 <p class="heading">Total Cases</p>
@@ -30,13 +30,6 @@
                                 <p class="title">{{localData.recovered.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")}}</p>
                             </div>
                         </div>
-                        <div class="level-item has-text-centered">
-                            <div>
-                                <p class="heading">Deaths Per One Million</p>
-                                <p class="title">{{localData.deathsPerOneMillion.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")}}</p>
-                            </div>
-                        </div>
-
                     </nav>
                 </div>
             </div>
@@ -69,6 +62,7 @@
                 try {
                     const response = await axios.get(locationApiUrl);
                     this.local = response.data
+                    localStorage.setItem('country', this.local.country);
                     await this.getLocalData(this.local.country)
                 } catch (error) {
                     console.log("Error");
