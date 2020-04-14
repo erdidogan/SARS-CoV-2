@@ -32,15 +32,18 @@
 
 <script>
     import axios from "axios";
-    const globalDataApiUrl = "https://corona.lmao.ninja/all"
+    const globalDataApiUrl = "https://corona.lmao.ninja/all";
+    let worldDataUrl = "https://corona.lmao.ninja/v2/countries?yesterday=false";
     export default {
         name: "latestGlobalData",
         created() {
+            this.getWorldData();
             this.getGlabalData();
         },
         data() {
             return {
                 globalData: [],
+                data:[],
             };
         },
         methods: {
@@ -54,6 +57,26 @@
                         position: 'is-bottom',
                     });
                     console.log("Error")
+                }
+            },
+            async getWorldData() {
+                try {
+                    const response = await axios.get(worldDataUrl);
+                    this.data.push(["Country","Confirmed Cases"]);
+                    for (let index in response.data) {
+                        if(response.data[index].country === "UK")
+                            this.data.push(["United Kingdom",response.data[index].cases]);
+                        else if(response.data[index].country === "USA")
+                            this.data.push(["United States",response.data[index].cases]);
+                        else if(response.data[index].country === "Libyan Arab Jamahiriya")
+                            this.data.push(["Libya",response.data[index].cases]);
+                        else
+                            this.data.push([response.data[index].country,response.data[index].cases]);
+                    }
+
+                    localStorage.setItem('mapData', JSON.stringify(this.data));
+                } catch (error) {
+                    console.log(error)
                 }
             },
 

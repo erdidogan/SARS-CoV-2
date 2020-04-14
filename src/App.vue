@@ -12,6 +12,20 @@
       </div>
     </section>
     <local-analytics/>
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">
+          Cases In Global
+        </p>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          <div id="regions_div" style="height: 500px;"></div>
+        </div>
+      </div>
+    </div>
+
+<!--    <world-data/>-->
     <compare/>
     <section>
       <footer class="footer ">

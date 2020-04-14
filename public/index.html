@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" async></script>
     <title>SARS-CoV-2 Information Dashboard</title>
   </head>
   <body>
@@ -14,4 +15,18 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+  <script type="text/javascript" async>
+    google.charts.load('current', {
+      'packages':['geochart'],
+      'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+    });
+    google.charts.setOnLoadCallback(drawRegionsMap);
+
+    function drawRegionsMap() {
+      var data = google.visualization.arrayToDataTable(JSON.parse(localStorage.getItem("mapData")));
+      var options = {colorAxis: {colors: ['white', 'gray'] }};
+      var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+      chart.draw(data, options);
+    }
+  </script>
 </html>

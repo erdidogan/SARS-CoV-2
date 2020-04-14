@@ -1,34 +1,5 @@
 <template>
     <section>
-        <div class="card is-light">
-            <header class="card-header">
-                <p class="card-header-title">
-                    Compare Cases In Countries
-                </p>
-            </header>
-
-            <div class="card-content">
-                <div class="content">
-                    <b-field label="">
-                        <b-taginput
-                                v-model="tagsConfirmed"
-                                :data="filteredTagsConfirmed"
-                                autocomplete
-                                :allow-new="allowNew"
-                                :open-on-focus="openOnFocus"
-                                :maxtags="5"
-                                field="name"
-                                placeholder="Type a country name"
-                                @typing="getFilteredTags4Confirmed">
-                        </b-taginput>
-                    </b-field>
-                    <line-chart xtitle="Days" ytitle="Confirmed Cases" :messages="{empty: 'No data'}"
-                                :data="this.tagsConfirmed"></line-chart>
-                </div>
-            </div>
-
-        </div>
-
         <div class="card">
             <header class="card-header">
                 <p class="card-header-title">
@@ -45,13 +16,13 @@
                                 autocomplete
                                 :allow-new="allowNew"
                                 :open-on-focus="openOnFocus"
-                                :maxtags="5"
+                                :maxtags="10"
                                 field="name"
                                 placeholder="Type a country name"
                                 @typing="getFilteredTags">
                         </b-taginput>
                     </b-field>
-                    <line-chart label="Death Graph" xtitle="Days"  ytitle="Deaths"
+                    <line-chart label="Death Graph" xtitle="Days"  ytitle="Deaths"  thousands=","
                                 :messages="{empty: 'No data'}" :data="this.tags"></line-chart>
                 </div>
             </div>
