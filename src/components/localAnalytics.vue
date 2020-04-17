@@ -42,7 +42,7 @@
     import axios from "axios";
 
     const locationApiUrl = "http://ip-api.com/json"
-    const localDataApiUrl = "https://corona.lmao.ninja/countries/"
+    const localDataApiUrl = "https://corona.lmao.ninja/v2/countries/"
 
     export default {
         name: "homepageInfo",

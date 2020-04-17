@@ -15,18 +15,4 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
-  <script type="text/javascript" async>
-    google.charts.load('current', {
-      'packages':['geochart'],
-      'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
-    });
-    google.charts.setOnLoadCallback(drawRegionsMap);
-
-    function drawRegionsMap() {
-      var data = google.visualization.arrayToDataTable(JSON.parse(localStorage.getItem("mapData")));
-      var options = {colorAxis: {colors: ['white', 'gray'] }};
-      var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
-      chart.draw(data, options);
-    }
-  </script>
 </html>

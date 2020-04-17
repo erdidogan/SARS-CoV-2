@@ -32,7 +32,7 @@
 
 <script>
     import axios from "axios";
-    const globalDataApiUrl = "https://corona.lmao.ninja/all";
+    const globalDataApiUrl = "https://corona.lmao.ninja/v2/all";
     let worldDataUrl = "https://corona.lmao.ninja/v2/countries?yesterday=false";
     export default {
         name: "latestGlobalData",

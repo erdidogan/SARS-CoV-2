@@ -12,19 +12,7 @@
       </div>
     </section>
     <local-analytics/>
-    <div class="card">
-      <header class="card-header">
-        <p class="card-header-title">
-          Cases In Global
-        </p>
-      </header>
-      <div class="card-content">
-        <div class="content">
-          <div id="regions_div" style="height: 500px;"></div>
-        </div>
-      </div>
-    </div>
-
+    <world-view/>
 <!--    <world-data/>-->
     <compare/>
     <section>
@@ -47,10 +35,12 @@
   import LatestGlobalData from "./components/latestGlobalData";
   import LocalAnalytics from "./components/localAnalytics";
   import Compare from "./components/compare";
+  import WorldView from "./components/worldView";
 
   export default {
     name: 'App',
     components: {
+      WorldView,
       Compare,
       LocalAnalytics,
       LatestGlobalData,

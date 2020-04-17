@@ -8,9 +8,9 @@ Vue.use(Buefy);
 
 import Chartkick from 'vue-chartkick'
 import Chart from 'chart.js'
-//Vue.use(Chartkick);
+Vue.use(Chartkick);
 Vue.use(Chartkick.use(Chart));
-//Chartkick.configure({language: "en", mapsApiKey: "AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY"})
+Chartkick.configure({language: "en", mapsApiKey: "AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY"})
 
 
 Vue.config.productionTip = false;
