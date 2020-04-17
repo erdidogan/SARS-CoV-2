@@ -6,7 +6,7 @@
                 <div class="media">
                     <div class="media-content">
                         <b-tooltip label="Current Location" type="is-dark" position="is-right" always>
-                        <p class="title is-4">{{local.country}}</p>
+                        <p class="title is-4">{{local.country_name}}</p>
                         </b-tooltip>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
 <script>
     import axios from "axios";
 
-    const locationApiUrl = "http://ip-api.com/json"
+    const locationApiUrl = "https://geoip.edelkrone.com/json/"
     const localDataApiUrl = "https://corona.lmao.ninja/v2/countries/"
 
     export default {
@@ -62,8 +62,8 @@
                 try {
                     const response = await axios.get(locationApiUrl);
                     this.local = response.data
-                    localStorage.setItem('country', this.local.country);
-                    await this.getLocalData(this.local.country)
+                    localStorage.setItem('country', this.local.country_name);
+                    await this.getLocalData(this.local.country_name)
                 } catch (error) {
                     console.log("Error");
                 }
