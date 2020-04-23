@@ -3,7 +3,7 @@
     <section class="hero is-small is-dark is-bold">
       <div class="hero-body">
         <h1 class="title">
-          SARS-CoV-2
+          SARS-CoV-2 🦠
         </h1>
         <h2 class="subtitle">
           Analytics
@@ -13,7 +13,6 @@
     </section>
     <local-analytics/>
     <world-view/>
-<!--    <world-data/>-->
     <compare/>
     <section>
       <footer class="footer ">

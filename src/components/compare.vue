@@ -1,34 +1,62 @@
 <template>
     <section>
-        <div class="card">
-            <header class="card-header">
-                <p class="card-header-title">
-                    Compare Deaths In Countries
-                </p>
-            </header>
+        <div class="columns is-gapless">
+            <div class="column">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            Cases In Countries
+                        </p>
+                    </header>
+                    <div class="card-content">
+                        <b-field>
+                            <b-select placeholder="Select a Country"  v-model="selectedConfirmed">
+                                <option
+                                        v-for="option in confirmedGraph"
+                                        :value="option.data"
+                                        :key="option.name">
+                                    {{ option.name}}
+                                </option>
+                            </b-select>
+                        </b-field>
+                        <div class="content">
+                            <line-chart label="Case" xtitle="Days"  ytitle="Cases"  thousands="," :curve="true" :dataset="{showLine: true, spanGaps:true}"
+                                        :messages="{empty: 'No data'}" :data="selectedConfirmed"></line-chart>
 
-            <div class="card-content">
-                <div class="content">
-                    <b-field label="">
-                        <b-taginput
-                                v-model="tags"
-                                :data="filteredTags"
-                                autocomplete
-                                :allow-new="allowNew"
-                                :open-on-focus="openOnFocus"
-                                :maxtags="10"
-                                field="name"
-                                placeholder="Type a country name"
-                                @typing="getFilteredTags">
-                        </b-taginput>
-                    </b-field>
-                    <line-chart label="Death Graph" xtitle="Days"  ytitle="Deaths"  thousands=","
-                                :messages="{empty: 'No data'}" :data="this.tags"></line-chart>
+
+                        </div>
+                    </div>
+
                 </div>
             </div>
+            <div class="column">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            Deaths In Countries
+                        </p>
+                    </header>
 
+                    <div class="card-content">
+                        <div class="content">
+                            <b-field>
+                                <b-select placeholder="Select a Country"  v-model="selected">
+                                    <option
+                                            v-for="option in deathGraph"
+                                            :value="option.data"
+                                            :key="option.name">
+                                        {{ option.name}}
+                                    </option>
+                                </b-select>
+                            </b-field>
+                            <line-chart label="Death" xtitle="Days"  ytitle="Deaths"  thousands="," :dataset="{showLine: true, spanGaps:true}"
+                                        :messages="{empty: 'No data'}" :data="this.selected"></line-chart>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
-
     </section>
 
 </template>
@@ -39,7 +67,7 @@
 
     export default {
         name: "compare",
-        created() {
+        mounted() {
             this.getTimeline();
 
         },
@@ -47,14 +75,8 @@
             return {
                 deathGraph: [],
                 confirmedGraph: [],
-
-                filteredTags: this.deathGraph,
-                tags: [],
-                filteredTagsConfirmed: this.confirmedGraph,
-                tagsConfirmed: [],
-                allowNew: false,
-                openOnFocus: false,
-                isSelectOnly: false,
+                selected:null,
+                selectedConfirmed: null,
             };
         },
         methods: {
@@ -87,32 +109,14 @@
                     }
                     if (index === "US")
                         index = "United States";
+                    if (index === "UK")
+                        index = "United Kingdom";
                     this.deathGraph.push({"name": index, "data": death});
                     this.confirmedGraph.push({"name": index, "data": confirmedCases});
-                    if (index === localStorage.getItem("country") || index === "Italy" || index === "France" || index === "United States") {
-                        this.tagsConfirmed.push({"name": index, "data": confirmedCases});
-                        this.tags.push({"name": index, "data": death});
-                    }
                     death = [];
                     confirmedCases = [];
 
                 }
-            },
-            getFilteredTags(text) {
-                this.filteredTags = this.deathGraph.filter((option) => {
-                    return option.name
-                        .toString()
-                        .toLowerCase()
-                        .indexOf(text.toLowerCase()) >= 0
-                })
-            },
-            getFilteredTags4Confirmed(text) {
-                this.filteredTagsConfirmed = this.confirmedGraph.filter((option) => {
-                    return option.name
-                        .toString()
-                        .toLowerCase()
-                        .indexOf(text.toLowerCase()) >= 0
-                })
             },
         },
     }
