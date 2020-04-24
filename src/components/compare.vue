@@ -75,8 +75,8 @@
             return {
                 deathGraph: [],
                 confirmedGraph: [],
-                selected:null,
-                selectedConfirmed: null,
+                selected:[],
+                selectedConfirmed: [],
             };
         },
         methods: {
@@ -111,8 +111,13 @@
                         index = "United States";
                     if (index === "UK")
                         index = "United Kingdom";
+                    if(index === localStorage.getItem("country")){
+                        this.selected = death
+                        this.selectedConfirmed = confirmedCases
+                    }
                     this.deathGraph.push({"name": index, "data": death});
                     this.confirmedGraph.push({"name": index, "data": confirmedCases});
+
                     death = [];
                     confirmedCases = [];
 
