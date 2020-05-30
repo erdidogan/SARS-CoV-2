@@ -1,6 +1,5 @@
 <template>
     <section>
-
         <div class="card">
             <div class="card-content">
                 <div class="media">
@@ -15,19 +14,19 @@
                         <div class="level-item has-text-centered">
                             <div>
                                 <p class="heading">Total Cases </p>
-                                <p class="title">{{localData.cases.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")}}😷</p>
+                                <p class="title">{{localData.cases.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")}}</p>
                             </div>
                         </div>
                         <div class="level-item has-text-centered">
                             <div>
                                 <p class="heading">Total Death </p>
-                                <p class="title">{{localData.deaths.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")}}☠️</p>
+                                <p class="title">{{localData.deaths.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")}}</p>
                             </div>
                         </div>
                         <div class="level-item has-text-centered">
                             <div>
                                 <p class="heading">Total Recovered</p>
-                                <p class="title">{{localData.recovered.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")}}😎</p>
+                                <p class="title">{{localData.recovered.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")}}</p>
                             </div>
                         </div>
                     </nav>

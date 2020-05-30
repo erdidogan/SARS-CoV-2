@@ -12,7 +12,7 @@
       </div>
     </section>
     <local-analytics/>
-    <world-view/>
+
     <compare/>
     <section>
       <footer class="footer ">
@@ -34,12 +34,11 @@
   import LatestGlobalData from "./components/latestGlobalData";
   import LocalAnalytics from "./components/localAnalytics";
   import Compare from "./components/compare";
-  import WorldView from "./components/worldView";
+
 
   export default {
     name: 'App',
     components: {
-      WorldView,
       Compare,
       LocalAnalytics,
       LatestGlobalData,

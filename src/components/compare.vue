@@ -5,12 +5,12 @@
                 <div class="card">
                     <header class="card-header">
                         <p class="card-header-title">
-                            Cases In Countries
+                            Cases In Country
                         </p>
                     </header>
                     <div class="card-content">
                         <b-field>
-                            <b-select placeholder="Select a Country"  v-model="selectedConfirmed">
+                            <b-select placeholder="Select a Country" v-model="selectedConfirmed">
                                 <option
                                         v-for="option in confirmedGraph"
                                         :value="option.data"
@@ -20,27 +20,29 @@
                             </b-select>
                         </b-field>
                         <div class="content">
-                            <line-chart label="Case" xtitle="Days"  ytitle="Cases"  thousands="," :curve="true" :dataset="{showLine: true, spanGaps:true}"
+                            <line-chart label="Case" xtitle="Days" ytitle="Cases" thousands="," :curve="true"
                                         :messages="{empty: 'No data'}" :data="selectedConfirmed"></line-chart>
-
-
                         </div>
                     </div>
 
                 </div>
             </div>
+
+
+        </div>
+
+        <div class="columns is-gapless">
             <div class="column">
                 <div class="card">
                     <header class="card-header">
                         <p class="card-header-title">
-                            Deaths In Countries
+                            Deaths In Country
                         </p>
                     </header>
-
                     <div class="card-content">
                         <div class="content">
                             <b-field>
-                                <b-select placeholder="Select a Country"  v-model="selected">
+                                <b-select placeholder="Select a Country" v-model="selected">
                                     <option
                                             v-for="option in deathGraph"
                                             :value="option.data"
@@ -49,20 +51,24 @@
                                     </option>
                                 </b-select>
                             </b-field>
-                            <line-chart label="Death" xtitle="Days"  ytitle="Deaths"  thousands="," :dataset="{showLine: true, spanGaps:true}"
+                            <line-chart label="Death" xtitle="Days" ytitle="Deaths" thousands=","
                                         :messages="{empty: 'No data'}" :data="this.selected"></line-chart>
                         </div>
                     </div>
 
                 </div>
+
             </div>
+
         </div>
+
     </section>
 
 </template>
 
 <script>
     import axios from "axios";
+
     let timelineApiUrl = "https://pomber.github.io/covid19/timeseries.json"
 
     export default {
@@ -75,8 +81,9 @@
             return {
                 deathGraph: [],
                 confirmedGraph: [],
-                selected:[],
+                selected: [],
                 selectedConfirmed: [],
+
             };
         },
         methods: {
@@ -104,14 +111,15 @@
                         let cases = input[index][index2].confirmed;
                         if (deaths !== 0)
                             death.push([date, deaths]);
-                        if (cases !== 0)
+                        if (cases !== 0) {
                             confirmedCases.push([date, cases]);
+                        }
+
                     }
-                    if (index === "US")
+                    if (index === "US") {
                         index = "United States";
-                    if (index === "UK")
-                        index = "United Kingdom";
-                    if(index === localStorage.getItem("country")){
+                    }
+                    if (index === localStorage.getItem("country")) {
                         this.selected = death
                         this.selectedConfirmed = confirmedCases
                     }
