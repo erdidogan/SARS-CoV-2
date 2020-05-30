@@ -27,11 +27,6 @@
 
                 </div>
             </div>
-
-
-        </div>
-
-        <div class="columns is-gapless">
             <div class="column">
                 <div class="card">
                     <header class="card-header">
@@ -59,9 +54,7 @@
                 </div>
 
             </div>
-
         </div>
-
     </section>
 
 </template>
