@@ -1,15 +1,10 @@
 # SARS-CoV-2 UI 
 
-![Image](./src/assets/1.png "Information Dashborad")
-![Image](./src/assets/2.png "Information Dashborad")
-
 An open-source covid19 data tracker project. 
 
 ## Feauteres
 
 * Elegant, Simple UI
-* Instant case search
-* Instant Local Case Data View
 * Compare the number of cases in countries
 
 
@@ -49,8 +44,6 @@ npm run serve
 ## Open Source Public APIs
 
 * [NovelCovid/API](https://github.com/NovelCOVID/API) - Local & Global Data Source 
-* [Pomver/covid19](https://github.com/pomber/covid19) -  Compoare Data Source 
-
 
 ## Authors
 
