@@ -10,10 +10,8 @@
   "dependencies": {
     "axios": "^0.19.2",
     "buefy": "^0.8.20",
-    "chart.js": "^2.9.3",
     "core-js": "^3.6.4",
-    "vue": "^2.6.11",
-    "vue-chartkick": "^0.6.0"
+    "vue": "^2.6.11"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.4.1",

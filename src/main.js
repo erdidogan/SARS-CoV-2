@@ -5,11 +5,6 @@ import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
 Vue.use(Buefy);
 
-import Chartkick from 'vue-chartkick'
-import Chart from 'chart.js'
-Vue.use(Chartkick);
-Vue.use(Chartkick.use(Chart));
-
 Vue.config.productionTip = false;
 
 new Vue({
