@@ -1,3 +1,4 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=erdidogan_SARS-CoV-2&metric=alert_status)](https://sonarcloud.io/dashboard?id=erdidogan_SARS-CoV-2)
 # SARS-CoV-2 UI 
 
 An open-source covid19 data tracker project. 
