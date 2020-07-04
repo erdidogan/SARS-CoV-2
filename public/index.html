@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <style>
-      #myBtn {
+      #goUp {
         display: none; /* Hidden by default */
         position: fixed; /* Fixed/sticky position */
         bottom: 20px; /* Place the button at the bottom of the page */
@@ -17,13 +17,13 @@
         background-color: red; /* Set a background color */
         color: white; /* Text color */
         cursor: pointer; /* Add a mouse pointer on hover */
-        padding: 15px; /* Some padding */
+        padding: 10px; /* Some padding */
         border-radius: 10px; /* Rounded corners */
-        font-size: 18px; /* Increase font size */
+        font-size: 12px; /* Increase font size */
       }
 
-      #myBtn:hover {
-        background-color: #555; /* Add a dark-grey background on hover */
+      #goUp:hover {
+        background-color: #555;
       }
     </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -42,22 +42,22 @@
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Back To Top</button>
+    <button onclick="topFunction()" id="goUp" title="Go to top">Back To Top</button>
     <!-- built files will be auto injected -->
   </body>
 <script>
-  mybutton = document.getElementById("myBtn");
+  mybutton = document.getElementById("goUp");
   window.onscroll = function() {scrollFunction()};
   function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
       mybutton.style.display = "block";
     } else {
       mybutton.style.display = "none";
     }
   }
   function topFunction() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   }
 </script>
 </html>

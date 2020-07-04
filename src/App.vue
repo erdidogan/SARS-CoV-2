@@ -4,7 +4,7 @@
             <div class="hero-body">
                 <div class="container">
                     <h1 class="title">
-                        SARS-CoV-2 🦠
+                        SARS-CoV-2 🦠😷
                     </h1>
                 </div>
             </div>
@@ -16,11 +16,11 @@
         <footer class="footer notification is-dark ">
             <div class="content has-text-centered">
                 <p>
-                    <strong>SARS-COV-2</strong> by <a href="https://www.erdidogan.com">Erdi Doğan</a>. The
+                    <strong>SARS-COV-2</strong> by <a target="_blank" rel="noopener noreferrer" href="https://erdidogan.com">Erdi Doğan</a>. The
                     source code is licensed
-                    <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+                    <a target="_blank" rel="noopener noreferrer" href="http://opensource.org/licenses/mit-license.php">MIT</a>.
                     The data is provided by open-source public APIs. You can find project source code on
-                    <a href="https://github.com/erdidogan/SARS-CoV-2"> Github</a>.
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/erdidogan/SARS-CoV-2"> Github</a>.
                 </p>
             </div>
         </footer>

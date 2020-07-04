@@ -34,7 +34,7 @@
 <script>
     import axios from "axios";
 
-    const globalDataApiUrl = "https://corona.lmao.ninja/v2/all";
+    const globalDataApiUrl = "https://disease.sh/v3/covid-19/all?yesterday=false&allowNull=false";
     export default {
         name: "latestGlobalData",
         created() {
@@ -42,8 +42,7 @@
         },
         data() {
             return {
-                globalData: [],
-                data: [],
+                globalData: []
             };
         },
         methods: {
