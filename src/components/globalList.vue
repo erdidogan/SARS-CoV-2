@@ -81,9 +81,7 @@
         data() {
             return {
                 stats: [],
-                treshHold: 0.85,
-                search: '',
-                good: false,
+                treshHold: 0.85
             };
         },
         methods: {
