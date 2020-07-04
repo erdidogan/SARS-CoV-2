@@ -15,7 +15,7 @@ An open-source covid19 data tracker project.
 ### Prerequisites
  Install latest version of 'node.js' and 'npm' in order to start development.
 ```
-Vue 3 (Vue-Cli)
+Vue  (Vue-Cli)
 Buefy 
 Axios
 ```
@@ -40,7 +40,7 @@ npm run serve
 
 ## Built With
 
-* [Vue 3](https://vuejs.org/) - The progressive javascript framework
+* [Vue ](https://vuejs.org/) - The progressive javascript framework
 * [Buefy](https://buefy.org/) - Lightweight UI Components
 * [Axios](https://github.com/axios/axios) - Promise Based HTTP Client
 
