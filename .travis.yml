@@ -5,6 +5,5 @@ cache: npm
 script:
   - npm run lint
   - npm run build
-after_success:
-- bash <(curl -s https://codecov.io/bash) -t 3b83d2f1-6afd-4281-8d91-5e41a11d837d
+
 
