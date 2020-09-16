@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.com/erdidogan/SARS-CoV-2.svg?branch=master)](https://travis-ci.com/erdidogan/SARS-CoV-2)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=erdidogan_SARS-CoV-2&metric=alert_status)](https://sonarcloud.io/dashboard?id=erdidogan_SARS-CoV-2)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=erdidogan_SARS-CoV-2&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=erdidogan_SARS-CoV-2)
+[![Build Status](https://travis-ci.com/erdidogan/SARS-CoV-2.svg?branch=master)](https://travis-ci.com/erdidogan/SARS-CoV-2) -
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=erdidogan_SARS-CoV-2&metric=alert_status)](https://sonarcloud.io/dashboard?id=erdidogan_SARS-CoV-2) -
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=erdidogan_SARS-CoV-2&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=erdidogan_SARS-CoV-2) -
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=erdidogan_SARS-CoV-2&metric=security_rating)](https://sonarcloud.io/dashboard?id=erdidogan_SARS-CoV-2)
 # SARS-CoV-2 UI 
 
