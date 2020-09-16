@@ -4,42 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <style>
-      #goUp {
-        display: none; /* Hidden by default */
-        position: fixed; /* Fixed/sticky position */
-        bottom: 20px; /* Place the button at the bottom of the page */
-        right: 30px; /* Place the button 30px from the right */
-        z-index: 99; /* Make sure it does not overlap */
-        border: none; /* Remove borders */
-        outline: none; /* Remove outline */
-        background-color: red; /* Set a background color */
-        color: white; /* Text color */
-        cursor: pointer; /* Add a mouse pointer on hover */
-        padding: 10px; /* Some padding */
-        border-radius: 10px; /* Rounded corners */
-        font-size: 12px; /* Increase font size */
-      }
-
-      #goUp:hover {
-        background-color: #555;
-      }
-    </style>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169318435-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-169318435-1');
-    </script>
-    <title>SARS-CoV-2 Stats</title>
+    <title>🦠 SARS-CoV-2</title>
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong>Please enable Javascript to continue.</strong>
     </noscript>
     <div id="app"></div>
     <button onclick="topFunction()" id="goUp" title="Go to top">Back To Top</button>
@@ -60,4 +29,23 @@
     document.documentElement.scrollTop = 0;
   }
 </script>
+  <style>
+      #goUp {
+          display: none; /* Hidden by default */
+          position: fixed; /* Fixed/sticky position */
+          bottom: 20px; /* Place the button at the bottom of the page */
+          right: 30px; /* Place the button 30px from the right */
+          z-index: 99; /* Make sure it does not overlap */
+          border: none; /* Remove borders */
+          outline: none; /* Remove outline */
+          cursor: pointer; /* Add a mouse pointer on hover */
+          padding: 10px; /* Some padding */
+          border-radius: 10px; /* Rounded corners */
+          font-size: 12px; /* Increase font size */
+      }
+
+      #goUp:hover {
+          background-color: #fcfcfc;
+      }
+  </style>
 </html>
