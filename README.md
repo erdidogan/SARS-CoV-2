@@ -6,7 +6,7 @@
 
 An open-source covid19 data tracker project. 
 
-![Image](./assets/intro.png "App")
+![Image](./src/assets/intro.png "App")
 
 ## Feauteres
 
