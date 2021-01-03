@@ -1,51 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width,initial-scale=1.0" name="viewport">
     <title>🦠 SARS-CoV-2</title>
-  </head>
-  <body>
-    <noscript>
-      <strong>Please enable Javascript to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <button onclick="topFunction()" id="goUp" title="Go to top">Back To Top</button>
-    <!-- built files will be auto injected -->
-  </body>
+</head>
+<body>
+<noscript>
+    <strong>Please enable Javascript to continue.</strong>
+</noscript>
+<div id="app"></div>
+<button id="goUp" onclick="topFunction()" title="Go to top">↑ Up</button>
+<!-- built files will be auto injected -->
+</body>
+<link href="https://unpkg.com/bulma-prefers-dark@0.1.0-beta.0/css/bulma-prefers-dark.css" rel="stylesheet"/>
 <script>
-  mybutton = document.getElementById("goUp");
-  window.onscroll = function() {scrollFunction()};
-  function scrollFunction() {
-    if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
-      mybutton.style.display = "block";
-    } else {
-      mybutton.style.display = "none";
-    }
-  }
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
-</script>
-  <style>
-      #goUp {
-          display: none; /* Hidden by default */
-          position: fixed; /* Fixed/sticky position */
-          bottom: 20px; /* Place the button at the bottom of the page */
-          right: 30px; /* Place the button 30px from the right */
-          z-index: 99; /* Make sure it does not overlap */
-          border: none; /* Remove borders */
-          outline: none; /* Remove outline */
-          cursor: pointer; /* Add a mouse pointer on hover */
-          padding: 10px; /* Some padding */
-          border-radius: 10px; /* Rounded corners */
-          font-size: 12px; /* Increase font size */
-      }
+    mybutton = document.getElementById("goUp");
+    window.onscroll = function () {
+        scrollFunction()
+    };
 
-      #goUp:hover {
-          background-color: #fcfcfc;
-      }
-  </style>
+    function scrollFunction() {
+        if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<style>
+    #goUp {
+        display: none; /* Hidden by default */
+        position: fixed; /* Fixed/sticky position */
+        bottom: 20px; /* Place the button at the bottom of the page */
+        right: 30px; /* Place the button 30px from the right */
+        z-index: 99; /* Make sure it does not overlap */
+        border: none; /* Remove borders */
+        outline: none; /* Remove outline */
+        cursor: pointer; /* Add a mouse pointer on hover */
+        padding: 10px; /* Some padding */
+        border-radius: 10px; /* Rounded corners */
+        font-size: 12px; /* Increase font size */
+    }
+
+    #goUp:hover {
+        background-color: #fcfcfc;
+    }
+</style>
 </html>

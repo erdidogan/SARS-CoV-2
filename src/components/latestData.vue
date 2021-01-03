@@ -13,22 +13,19 @@
       <div class="level-item has-text-centered">
         <div>
           <p class="heading">Global Case</p>
-          <p class="title">{{ globalData.cases.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.") }}</p>
+          <p class="title">{{ new String(globalData.cases).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.") }}</p>
         </div>
       </div>
       <div class="level-item has-text-centered">
         <div>
           <p class="heading">Global Death</p>
-          <p class="title">{{ globalData.deaths.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.") }}</p>
+          <p class="title">{{ new String(globalData.deaths).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.") }}</p>
         </div>
       </div>
       <div class="level-item has-text-centered">
         <div>
           <p class="heading">Global Recovered</p>
-          <p class="title">{{
-              globalData.recovered.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g,
-                  "$1.")
-            }}</p>
+          <p class="title">{{ new String(globalData.recovered).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.") }}</p>
         </div>
       </div>
       <div class="level-item has-text-centered">
@@ -47,8 +44,7 @@ import axios from "axios";
 
 const globalDataApiUrl = "https://disease.sh/v3/covid-19/all?yesterday=false&allowNull=false";
 export default {
-  name: "latestGlobalData",
-  mounted() {
+  created() {
     this.getGlabalData();
   },
   data() {

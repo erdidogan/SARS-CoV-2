@@ -1,6 +1,6 @@
 {
   "name": "sarscov2ui",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -10,8 +10,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "buefy": "^0.8.20",
-    "core-js": "^3.6.4",
-    "node-forge": "^0.10.0",
+    "core-js": "^3.8.1",
     "vue": "^2.6.12"
   },
   "devDependencies": {
