@@ -11,9 +11,7 @@ An open-source covid19 data tracker project.
 ## Feauteres
 
 * Elegant, Simple UI
-* Compare the number of cases in countries
-* Travel Suggestions
-
+* Compare covid data between countries
 
 ### Install  & Start
 
