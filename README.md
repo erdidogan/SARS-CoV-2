@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/erdidogan/SARS-CoV-2.svg?branch=master)](https://travis-ci.com/erdidogan/SARS-CoV-2) 
+
 
 # SARS-CoV-2 UI 
 
